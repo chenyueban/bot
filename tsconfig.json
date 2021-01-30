@@ -1,0 +1,15 @@
+{
+  "extends": "@chenyueban/tsconfig",
+  "compilerOptions": {
+    "outDir": "dist"
+  },
+  "exclude": ["node_modules/", "dist/"],
+  "include": [
+    "app/**/*.ts",
+    "bin/*.ts",
+    "examples/**/*.ts",
+    "scripts/**/*.ts",
+    "src/**/*.ts",
+    "tests/**/*.spec.ts"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "hearthstone",
+  "private": "true",
+  "version": "0.0.1",
+  "description": "炉石 bot",
+  "author": {
+    "name": "chenyueban",
+    "email": "jasonchan0527@gmail.com"
+  }
+}
