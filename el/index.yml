@@ -5,6 +5,8 @@ plugins:
   official:
     - niubi
     - hitokoto
+    - search-anime
+    - search-image
   custom:
     - ./plugins/custom/hearthstone
 
@@ -42,3 +44,12 @@ hitokoto:
     - is: el say
     - includes: 凡尔赛
   params:
+
+search-anime:
+  token:
+
+search-image:
+  token: 93b35664cca41ef4a5267e92d507d3e0b181eb6a
+  options:
+    # 返回多少个结果
+    results: 3

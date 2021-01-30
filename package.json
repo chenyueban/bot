@@ -26,9 +26,12 @@
   "dependencies": {
     "@el-bot/plugin-hitokoto": "^0.0.11",
     "@el-bot/plugin-niubi": "^0.1.1",
+    "@el-bot/plugin-search-anime": "^0.0.1",
+    "@el-bot/plugin-search-image": "^0.0.5",
     "@el-bot/plugin-setu": "^0.0.12",
     "@hbt-org/core": "^1.1.14",
-    "el-bot": "^0.6.2"
+    "el-bot": "^0.6.2",
+    "lodash": "^4.17.20"
   },
   "devDependencies": {
     "@chenyueban/lint": "^0.1.4",

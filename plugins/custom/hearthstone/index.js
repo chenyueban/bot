@@ -26,12 +26,14 @@ module.exports = async function (ctx) {
         )
         if (minion) {
           return msg.reply(
-            minion.map((v) =>
-              Message.Image(
-                '',
-                `https://hs.chenyueban.com/hearthstone/images/minions/${v.id}.png`
+            minion
+              .map((v) =>
+                Message.Image(
+                  '',
+                  `https://hs.chenyueban.com/hearthstone/images/minions/${v.id}.png`
+                )
               )
-            )
+              .slice(0, 2)
           )
         }
 
@@ -57,13 +59,13 @@ module.exports = async function (ctx) {
 
       const jsonMatch = check.match(msg.plain.toLowerCase(), jsonReg)
       if (Array.isArray(jsonMatch) && jsonMatch[1]) {
-        const minion = minions.find(
+        const minion = minions.filter(
           (v) =>
             v.name.indexOf(jsonMatch[1]) > -1 ||
             (v.text && v.text.indexOf(jsonMatch[1]) > -1)
         )
         if (minion) {
-          return msg.reply(JSON.stringify(minion, null, 2))
+          return msg.reply(JSON.stringify(minion.slice(0, 2), null, 2))
         }
 
         const hero = heroes.find((v) => v.name.indexOf(jsonMatch[1]) > -1)
@@ -75,7 +77,7 @@ module.exports = async function (ctx) {
         }
       }
     } catch (e) {
-      msg.reply(`我裂开了：`, e)
+      msg.reply(`我裂开了`)
     }
   })
 }
