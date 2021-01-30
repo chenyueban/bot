@@ -6,8 +6,3 @@ const bot = new Bot(el)
 bot.start((msg) => {
   console.log(msg)
 })
-
-// 监听消息
-// bot.mirai.on("message", (msg) => {
-//   console.log(msg)
-// })

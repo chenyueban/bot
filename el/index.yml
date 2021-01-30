@@ -24,9 +24,7 @@ answer:
     reply:
       - type: Plain
         text: 快睡吧不要想我鸭
-  - includes:
-      - bing
-      - 壁纸
+  - re: 壁纸
     reply:
       - type: Image
         url: https://images.weserv.nl/?url=https://bing.ioliu.cn/v1/rand

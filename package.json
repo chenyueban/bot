@@ -27,6 +27,7 @@
     "@el-bot/plugin-hitokoto": "^0.0.11",
     "@el-bot/plugin-niubi": "^0.1.1",
     "@el-bot/plugin-setu": "^0.0.12",
+    "@hbt-org/core": "^1.1.14",
     "el-bot": "^0.6.2"
   },
   "devDependencies": {
