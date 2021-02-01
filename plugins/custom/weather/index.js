@@ -37,11 +37,11 @@ module.exports = async function (ctx) {
             'YYYY年M月D日'
           )} ${week} ${city}天气 ${weather} ${winddirect} ${windpower}
 ${index.map((v) => `${v.iname}：${v.ivalue} - ${v.detail}`).join('\n')}`
-          msg.reply(template)
+          msg.reply(template, true)
         }
       }
     } catch (e) {
-      msg.reply(`我裂开了`)
+      msg.reply(`我裂开了`, true)
     }
   })
 }

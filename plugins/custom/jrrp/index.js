@@ -53,7 +53,7 @@ module.exports = async function (ctx) {
         return msg.reply(`今日人品 ${value}% 哦~`, true)
       }
     } catch (e) {
-      msg.reply(`我裂开了`)
+      msg.reply(`我裂开了`, true)
     }
   })
 }

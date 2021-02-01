@@ -28,19 +28,19 @@ module.exports = async function (ctx) {
           if (list) {
             const { name, content, pic, material, process } = list
             const picture = Message.Image(null, pic)
-            msg.reply([picture])
+            msg.reply([picture], true)
             const template = `${name}
 ${content}
 配料：
 ${material.map((v) => `${v.mname} ${v.amount}`).join('\n')}
 做法：
 ${process.map((v, i) => `${i + 1}、${v.pcontent}`).join('\n')}`
-            msg.reply(template)
+            msg.reply(template, true)
           }
         }
       }
     } catch (e) {
-      msg.reply(`我裂开了`)
+      msg.reply(`我裂开了`, true)
     }
   })
 }

@@ -33,7 +33,8 @@ module.exports = async function (ctx) {
                   `https://hs.chenyueban.com/hearthstone/images/minions/${v.id}.png`
                 )
               )
-              .slice(0, 2)
+              .slice(0, 2),
+            true
           )
         }
 
@@ -42,18 +43,21 @@ module.exports = async function (ctx) {
           hero.childrenIds &&
           hero.childrenIds.map((child) => skills.find((v) => v.dbfId === child))
         if (hero) {
-          return msg.reply([
-            Message.Image(
-              '',
-              `https://hs.chenyueban.com/hearthstone/images/heroes/${hero.id}.png`
-            ),
-            ...(skill || []).map((v) =>
+          return msg.reply(
+            [
               Message.Image(
                 '',
-                `https://hs.chenyueban.com/hearthstone/images/skills/${v.id}.png`
-              )
-            ),
-          ])
+                `https://hs.chenyueban.com/hearthstone/images/heroes/${hero.id}.png`
+              ),
+              ...(skill || []).map((v) =>
+                Message.Image(
+                  '',
+                  `https://hs.chenyueban.com/hearthstone/images/skills/${v.id}.png`
+                )
+              ),
+            ],
+            true
+          )
         }
       }
 
@@ -65,7 +69,7 @@ module.exports = async function (ctx) {
             (v.text && v.text.indexOf(jsonMatch[1]) > -1)
         )
         if (minion) {
-          return msg.reply(JSON.stringify(minion.slice(0, 2), null, 2))
+          return msg.reply(JSON.stringify(minion.slice(0, 2), null, 2), true)
         }
 
         const hero = heroes.find((v) => v.name.indexOf(jsonMatch[1]) > -1)
@@ -73,11 +77,11 @@ module.exports = async function (ctx) {
           hero.childrenIds &&
           hero.childrenIds.map((child) => skills.find((v) => v.dbfId === child))
         if (hero) {
-          return msg.reply(JSON.stringify({ hero, skill }, null, 2))
+          return msg.reply(JSON.stringify({ hero, skill }, null, 2), true)
         }
       }
     } catch (e) {
-      msg.reply(`我裂开了`)
+      msg.reply(`我裂开了`, true)
     }
   })
 }
