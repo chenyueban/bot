@@ -5,7 +5,7 @@ const dayjs = require('dayjs')
 const Model = require('./model')
 
 const reg = {
-  re: '今日人品',
+  is: ['今日人品'],
 }
 
 function random() {
@@ -21,7 +21,7 @@ module.exports = async function (ctx) {
   mirai.on('message', async (msg) => {
     try {
       const match = check.match(msg.plain.toLowerCase(), reg)
-      if (Array.isArray(match)) {
+      if (match) {
         const { id, nickname } = msg.sender
         const target = await Model.findOne({ id }).exec()
         if (target) {
