@@ -5,13 +5,11 @@ mongoose.connect(`${process.env.BOT_DB_URI}/${process.env.MONGO_DATABASE}`, {
   useUnifiedTopology: true,
 })
 
-let counter = 1
 const ModelSchema = new Schema({
   id: Number,
   nickname: String,
-  count: {
+  value: {
     type: Number,
-    default: () => counter++,
   },
   timestamp: {
     type: Number,
@@ -19,4 +17,4 @@ const ModelSchema = new Schema({
   },
 })
 
-module.exports = mongoose.model('Peng', ModelSchema)
+module.exports = mongoose.model('JRRP', ModelSchema)

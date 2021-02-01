@@ -9,7 +9,7 @@ plugins:
     - search-image
   custom:
     - ./plugins/custom/hearthstone
-    - ./plugins/custom/peng
+    - ./plugins/custom/jrrp
     - ./plugins/custom/menu
     - ./plugins/custom/weather
 

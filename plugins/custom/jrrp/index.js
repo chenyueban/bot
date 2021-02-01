@@ -5,7 +5,11 @@ const dayjs = require('dayjs')
 const Model = require('./model')
 
 const reg = {
-  re: '砰砰砰|嘭嘭嘭|pengpengpeng',
+  re: '今日人品',
+}
+
+function random() {
+  return (Math.random() * 100).toFixed(2)
 }
 
 /**
@@ -31,23 +35,22 @@ module.exports = async function (ctx) {
           // 判断时间戳是否为今天
           if (dayjs(target.timestamp).isSame(dayjs(), 'day')) {
             // 如果是今天直接返回数量
-            return msg.reply(`@${target.nickname} ${target.count}`)
+            return msg.reply(`今日人品 ${target.value}% 哦~`, true)
           }
           // 如果不是今天 更新并返回数量
-          const result = await Model.updateOne(
-            { id },
-            { count: target.count + 1 }
-          )
-          console.log(result)
-          return msg.reply(`@${target.nickname} ${target.count + 1}`)
+          const value = random()
+          await Model.updateOne({ id }, { value })
+          return msg.reply(`今日人品 ${value}% 哦~`, true)
         }
         // 不存在记录 新建一个
-        const peng = new Model({
+        const value = random()
+        const jrrp = new Model({
           id,
           nickname,
+          value,
         })
-        await peng.save()
-        return msg.reply(`@${target.nickname} ${peng.count}`)
+        await jrrp.save()
+        return msg.reply(`今日人品 ${value}% 哦~`, true)
       }
     } catch (e) {
       msg.reply(`我裂开了`)
