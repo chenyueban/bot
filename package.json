@@ -30,8 +30,10 @@
     "@el-bot/plugin-search-image": "^0.0.5",
     "@el-bot/plugin-setu": "^0.0.12",
     "@hbt-org/core": "^1.1.14",
+    "axios": "^0.21.1",
+    "dayjs": "^1.10.4",
     "el-bot": "^0.6.2",
-    "lodash": "^4.17.20"
+    "mongoose": "^5.11.14"
   },
   "devDependencies": {
     "@chenyueban/lint": "^0.1.4",

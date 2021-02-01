@@ -9,6 +9,8 @@ plugins:
     - search-image
   custom:
     - ./plugins/custom/hearthstone
+    - ./plugins/custom/peng
+    - ./plugins/custom/menu
 
 admin:
   - 269380014
@@ -30,6 +32,10 @@ answer:
     reply:
       - type: Image
         url: https://images.weserv.nl/?url=https://bing.ioliu.cn/v1/rand
+  - re: 草|艹
+    reply:
+      - type: Image
+        path: cao.jpg
 
 niubi:
   url: https://el-bot-api.vercel.app/api/words/niubi

@@ -1,0 +1,10 @@
+{
+  "name": "peng",
+  "private": "true",
+  "version": "0.0.1",
+  "description": "磕头 bot",
+  "author": {
+    "name": "chenyueban",
+    "email": "jasonchan0527@gmail.com"
+  }
+}
