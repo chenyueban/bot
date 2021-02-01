@@ -11,6 +11,7 @@ plugins:
     - ./plugins/custom/hearthstone
     - ./plugins/custom/peng
     - ./plugins/custom/menu
+    - ./plugins/custom/weather
 
 admin:
   - 269380014
